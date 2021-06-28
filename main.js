@@ -120,12 +120,16 @@ function truncate(str) {
 
 function isValidPassword(str) {
   const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{1,}$/g
-  for(let s of str){
-      if(s == " "){
-          return false
-      }
+  const n = str.includes(" ")
+  if( n == true){
+    return false
   }
-  if (str.match(re)){
+  // for(let s of str){
+  //     if(s == " "){
+  //         return false
+  //     }
+  // }
+  if(str.match(re)){
       return true
   }
   return false
